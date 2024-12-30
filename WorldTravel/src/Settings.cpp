@@ -8,9 +8,11 @@ bool Settings::EnableNorthYankton = true;
 bool Settings::EnableLibertyCityLODLights = true;
 bool Settings::EnableLCOnStartup = true;
 
+char Settings::iniFilePath[MAX_PATH];
+
+
 void Settings::Load()
 {
-    char iniFilePath[MAX_PATH];
     GetFullPathName("WorldTravel.ini", MAX_PATH, iniFilePath, nullptr);
 
     EnableLogging = LoadBoolSetting("WorldTravel", "EnableLogging", true, iniFilePath);
@@ -32,4 +34,10 @@ bool Settings::LoadBoolSetting(const char* section, const char* key, bool defaul
 int Settings::LoadIntSetting(const char* section, const char* key, int defaultValue, const char* iniFilePath)
 {
     return GetPrivateProfileInt(section, key, defaultValue, iniFilePath);
+}
+
+std::string Settings::GetLang(const char* key, const char* defaultValue) {
+	char buffer[256];
+	GetPrivateProfileString("Languages", key, defaultValue, buffer, sizeof(buffer), iniFilePath);
+	return std::string(buffer);
 }

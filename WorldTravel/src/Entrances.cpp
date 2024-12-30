@@ -7,6 +7,7 @@
 #include <vector>
 #include <tuple>
 #include <unordered_map>
+#include "Settings.h"
 
 
 namespace entrances
@@ -124,16 +125,16 @@ namespace entrances
 
             // Los Santos marker configurations
             std::vector<MarkerInfo> markersLS = {
-                {"Press ~INPUT_CONTEXT~ to enter the garage.",
+                {Settings::GetLang("Lng1", "Press ~INPUT_CONTEXT~ to enter the garage."),
                  locationsLS["HighEndGarageIn"], locationsLS["HighEndGarageOut"], -1.0f, 2.4f, 2.3f, 3.0f, false, true},
 
-                {"Press ~INPUT_CONTEXT~ to exit the garage.",
+                {Settings::GetLang("Lng2", "Press ~INPUT_CONTEXT~ to exit the garage."),
                  locationsLS["HighEndGarageOut"], locationsLS["HighEndGarageIn"], -1.0f, 2.4f, 2.3f, 3.0f, false, true},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the lower FIB offices.",
+                {Settings::GetLang("Lng3", "Press ~INPUT_CONTEXT~ to take the lift to the lower FIB offices."),
                  locationsLS["FIBIn"], locationsLS["FIBOut"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the lobby.",
+                {Settings::GetLang("Lng4", "Press ~INPUT_CONTEXT~ to take the lift to the lobby."),
                  locationsLS["FIBOut"], locationsLS["FIBIn"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
             };
 
@@ -164,52 +165,52 @@ namespace entrances
 
             // Liberty City marker configurations
             std::vector<MarkerInfo> markersLC = {
-                {"Press ~INPUT_CONTEXT~ to take the lift to the observation deck.",
+                {Settings::GetLang("Lng5", "Press ~INPUT_CONTEXT~ to take the lift to the observation deck."),
                  locationsLC["RotterdamTowerSouthElevatorLobby"], locationsLC["RotterdamTowerSouthRoof"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the observation deck.",
+                {Settings::GetLang("Lng5", "Press ~INPUT_CONTEXT~ to take the lift to the observation deck."),
                  locationsLC["RotterdamTowerNorthElevatorLobby"], locationsLC["RotterdamTowerNorthRoof"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the lobby.",
+                {Settings::GetLang("Lng6", "Press ~INPUT_CONTEXT~ to take the lift to the lobby."),
                  locationsLC["RotterdamTowerSouthRoof"], locationsLC["RotterdamTowerSouthElevatorLobby"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the lobby.",
+                {Settings::GetLang("Lng6", "Press ~INPUT_CONTEXT~ to take the lift to the lobby."),
                  locationsLC["RotterdamTowerNorthRoof"], locationsLC["RotterdamTowerNorthElevatorLobby"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the 30th floor.",
+                {Settings::GetLang("Lng7", "Press ~INPUT_CONTEXT~ to take the lift to the 30th floor."),
                  locationsLC["RichardsMajesticLobby"], locationsLC["RichardsMajestic30thFloor"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the lobby.",
+                {Settings::GetLang("Lng6", "Press ~INPUT_CONTEXT~ to take the lift to the lobby."),
                  locationsLC["RichardsMajestic30thFloor"], locationsLC["RichardsMajesticLobby"], -1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the apartment.",
+                {Settings::GetLang("Lng8", "Press ~INPUT_CONTEXT~ to take the lift to the apartment."),
                  locationsLC["MiddleParkEastPenthouseLobby"], locationsLC["MiddleParkEastPenthouseApartment"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the lobby.",
+                {Settings::GetLang("Lng6", "Press ~INPUT_CONTEXT~ to take the lift to the lobby."),
                  locationsLC["MiddleParkEastPenthouseApartment"], locationsLC["MiddleParkEastPenthouseLobby"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the apartment.",
+                {Settings::GetLang("Lng8", "Press ~INPUT_CONTEXT~ to take the lift to the apartment."),
                  locationsLC["NorthwoodPenthouseLobby"], locationsLC["NorthwoodPenthouseApartment"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the lobby.",
+                {Settings::GetLang("Lng6", "Press ~INPUT_CONTEXT~ to take the lift to the lobby."),
                  locationsLC["NorthwoodPenthouseApartment"], locationsLC["NorthwoodPenthouseLobby"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the penthouse.",
+                {Settings::GetLang("Lng9", "Press ~INPUT_CONTEXT~ to take the lift to the penthouse."),
                  locationsLC["TrumpTowerPenthouseGround"], locationsLC["TrumpTowerPenthouseApartment"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the ground.",
+                {Settings::GetLang("Lng10", "Press ~INPUT_CONTEXT~ to take the lift to the ground."),
                  locationsLC["TrumpTowerPenthouseApartment"], locationsLC["TrumpTowerPenthouseGround"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the apartment.",
+                {Settings::GetLang("Lng8", "Press ~INPUT_CONTEXT~ to take the lift to the apartment."),
                  locationsLC["BruciePenthouseGround"], locationsLC["BruciePenthouseApartment"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the ground.",
+                {Settings::GetLang("Lng10", "Press ~INPUT_CONTEXT~ to take the lift to the ground."),
                  locationsLC["BruciePenthouseApartment"], locationsLC["BruciePenthouseGround"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the penthouse.",
+                {Settings::GetLang("Lng9", "Press ~INPUT_CONTEXT~ to take the lift to the penthouse."),
                  locationsLC["GayTonyPenthouseGround"], locationsLC["GayTonyPenthouseApartment"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to take the lift to the ground.",
+                {Settings::GetLang("Lng10", "Press ~INPUT_CONTEXT~ to take the lift to the ground."),
                  locationsLC["GayTonyPenthouseApartment"], locationsLC["GayTonyPenthouseGround"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
             };
             SpawnMarkers(locationsLC, markersLC);
@@ -225,10 +226,10 @@ namespace entrances
 
             // North Yankton marker configurations
             std::vector<MarkerInfo> markersNY = {
-                {"Press ~INPUT_CONTEXT~ to enter the bank.",
+                {Settings::GetLang("Lng11", "Press ~INPUT_CONTEXT~ to enter the bank."),
                  locationsNY["NorthYanktonBankIn"], locationsNY["NorthYanktonBankOut"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
 
-                {"Press ~INPUT_CONTEXT~ to exit the bank.",
+                {Settings::GetLang("Lng12", "Press ~INPUT_CONTEXT~ to exit the bank."),
                  locationsNY["NorthYanktonBankOut"], locationsNY["NorthYanktonBankIn"], -1.0f, 0.6f, 0.5f, 1.0f, false, false},
             };
 
@@ -253,4 +254,3 @@ void Entrances()
 	srand(GetTickCount());
 	entrances::EntrancesMain();
 }
-

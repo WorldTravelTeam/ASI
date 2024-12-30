@@ -369,7 +369,7 @@ namespace levelSwitch
 			UI::SET_BLIP_SCALE(AirportBlip, 1);
 			UI::SET_BLIP_SPRITE(AirportBlip, 90);
 			UI::BEGIN_TEXT_COMMAND_SET_BLIP_NAME("STRING");
-			UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME((char*)"Airport");
+            UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(const_cast<char*>(Settings::GetLang("Lng29", "Airport").c_str()));
 			UI::END_TEXT_COMMAND_SET_BLIP_NAME(AirportBlip);
 			UI::SET_BLIP_COLOUR(AirportBlip, 0);
 			UI::SET_BLIP_FLASHES(AirportBlip, false);
@@ -393,7 +393,7 @@ namespace levelSwitch
 			UI::SET_BLIP_SCALE(DocksBlip, 1);
 			UI::SET_BLIP_SPRITE(DocksBlip, 677);
 			UI::BEGIN_TEXT_COMMAND_SET_BLIP_NAME("STRING");
-			UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME((char*)"Docks");
+			UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(const_cast<char*>(Settings::GetLang("Lng30", "Docks").c_str()));
 			UI::END_TEXT_COMMAND_SET_BLIP_NAME(DocksBlip);
 			UI::SET_BLIP_COLOUR(DocksBlip, 0);
 			UI::SET_BLIP_FLASHES(DocksBlip, false);
@@ -420,7 +420,7 @@ namespace levelSwitch
 			UI::SET_BLIP_SCALE(FlyToLCBlip, 1);
 			UI::SET_BLIP_SPRITE(FlyToLCBlip, 307);
 			UI::BEGIN_TEXT_COMMAND_SET_BLIP_NAME("STRING");
-			UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME((char*)"Fly to Liberty City");
+			UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(const_cast<char*>(Settings::GetLang("Lng31", "Fly to Liberty City").c_str()));
 			UI::END_TEXT_COMMAND_SET_BLIP_NAME(FlyToLCBlip);
 			UI::SET_BLIP_COLOUR(FlyToLCBlip, 0);
 			UI::SET_BLIP_FLASHES(FlyToLCBlip, false);
@@ -444,7 +444,7 @@ namespace levelSwitch
 			UI::SET_BLIP_SCALE(FlyToLSBlip, 1);
 			UI::SET_BLIP_SPRITE(FlyToLSBlip, 307);
 			UI::BEGIN_TEXT_COMMAND_SET_BLIP_NAME("STRING");
-			UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME((char*)"Fly to Los Santos");
+			UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(const_cast<char*>(Settings::GetLang("Lng32", "Fly to Los Santos").c_str()));
 			UI::END_TEXT_COMMAND_SET_BLIP_NAME(FlyToLSBlip);
 			UI::SET_BLIP_COLOUR(FlyToLSBlip, 0);
 			UI::SET_BLIP_FLASHES(FlyToLSBlip, false);
@@ -468,7 +468,7 @@ namespace levelSwitch
 			UI::SET_BLIP_SCALE(FlyToCPBlip, 1);
 			UI::SET_BLIP_SPRITE(FlyToCPBlip, 307);
 			UI::BEGIN_TEXT_COMMAND_SET_BLIP_NAME("STRING");
-			UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME((char*)"Fly to Cayo Perico");
+			UI::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(const_cast<char*>(Settings::GetLang("Lng33", "Fly to Cayo Perico").c_str()));
 			UI::END_TEXT_COMMAND_SET_BLIP_NAME(FlyToCPBlip);
 			UI::SET_BLIP_COLOUR(FlyToCPBlip, 0);
 			UI::SET_BLIP_FLASHES(FlyToCPBlip, false);
@@ -1675,7 +1675,7 @@ namespace levelSwitch
 			{
 				if (PLAYER::GET_PLAYER_WANTED_LEVEL(playerPed) == 0)
 				{
-					worldtravel::HelpText::DisplayHelpText("Press ~INPUT_CONTEXT~ to fly to Liberty City or ~INPUT_CONTEXT_SECONDARY~ to North Yankton for $350.");
+					worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng34", "Press ~INPUT_CONTEXT~ to fly to Liberty City or ~INPUT_CONTEXT_SECONDARY~ to North Yankton for $350."));
 					if (CONTROLS::IS_DISABLED_CONTROL_JUST_PRESSED(2, 51) || CONTROLS::IS_DISABLED_CONTROL_JUST_PRESSED(2, 52))
 					{
 						int destination = 0;
@@ -1780,7 +1780,7 @@ namespace levelSwitch
 				}
 				else
 				{
-					worldtravel::HelpText::DisplayHelpText("You cannot buy a plane ticket while wanted by the cops!");
+					worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng35", "You cannot buy a plane ticket while wanted by the cops!"));
 				}
 			}
 		}
@@ -1796,7 +1796,7 @@ namespace levelSwitch
 			{
 				if (PLAYER::GET_PLAYER_WANTED_LEVEL(playerPed) == 0)
 				{
-					worldtravel::HelpText::DisplayHelpText("Press ~INPUT_CONTEXT~ to fly to Los Santos or ~INPUT_CONTEXT_SECONDARY~ to North Yankton for $350.");
+					worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng36", "Press ~INPUT_CONTEXT~ to fly to Los Santos or ~INPUT_CONTEXT_SECONDARY~ to North Yankton for $350."));
 					if (CONTROLS::IS_DISABLED_CONTROL_JUST_PRESSED(2, 51) || CONTROLS::IS_DISABLED_CONTROL_JUST_PRESSED(2, 52))
 					{
 						int destination = 1;
@@ -1905,7 +1905,7 @@ namespace levelSwitch
 				}
 				else
 				{
-					worldtravel::HelpText::DisplayHelpText("You cannot buy a plane ticket while wanted by the cops!");
+					worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng35", "You cannot buy a plane ticket while wanted by the cops!"));
 				}
 			}
 		}
@@ -1921,7 +1921,7 @@ namespace levelSwitch
 		{
 			if (PLAYER::GET_PLAYER_WANTED_LEVEL(playerPed) == 0)
 			{
-				worldtravel::HelpText::DisplayHelpText("Press ~INPUT_CONTEXT~ to fly to Los Santos or ~INPUT_CONTEXT_SECONDARY~ to Liberty City for $350.");
+				worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng37", "Press ~INPUT_CONTEXT~ to fly to Los Santos or ~INPUT_CONTEXT_SECONDARY~ to Liberty City for $350."));
 				if (CONTROLS::IS_DISABLED_CONTROL_JUST_PRESSED(2, 51) || CONTROLS::IS_DISABLED_CONTROL_JUST_PRESSED(2, 52))
 				{
 					int destination = 2;
@@ -2039,7 +2039,7 @@ namespace levelSwitch
 			}
 			else
 			{
-				worldtravel::HelpText::DisplayHelpText("You cannot buy a plane ticket while wanted by the cops!");
+				worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng35", "You cannot buy a plane ticket while wanted by the cops!"));
 			}
 		}
 	}
@@ -2082,7 +2082,7 @@ namespace levelSwitch
 						{
 							if (playerVelocityX < 0.1f && playerVelocityY < 0.1f && playerVelocityZ < 0.1f)
 							{
-								worldtravel::HelpText::DisplayHelpText("Press ~INPUT_CONTEXT~ to ship this vehicle to Liberty City for $3500.");
+								worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng38", "Press ~INPUT_CONTEXT~ to ship this vehicle to Liberty City for $3500."));
 								if (CONTROLS::IS_DISABLED_CONTROL_JUST_PRESSED(2, 51))
 								{
 									CAM::DO_SCREEN_FADE_OUT(800);
@@ -2120,7 +2120,7 @@ namespace levelSwitch
 						}
 						else
 						{
-							worldtravel::HelpText::DisplayHelpText("You cannot ship this vehicle while wanted by the cops!");
+							worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng39", "You cannot ship this vehicle while wanted by the cops!"));
 						}
 					}
 				}
@@ -2136,7 +2136,7 @@ namespace levelSwitch
 						{
 							if (playerVelocityX < 0.1f && playerVelocityY < 0.1f && playerVelocityZ < 0.1f)
 							{
-								worldtravel::HelpText::DisplayHelpText("Press ~INPUT_CONTEXT~ to ship this vehicle to Los Santos for $3500.");
+								worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng40", "Press ~INPUT_CONTEXT~ to ship this vehicle to Los Santos for $3500."));
 								if (CONTROLS::IS_DISABLED_CONTROL_JUST_PRESSED(2, 51))
 								{
 									CAM::DO_SCREEN_FADE_OUT(800);
@@ -2172,7 +2172,7 @@ namespace levelSwitch
 						}
 						else
 						{
-							worldtravel::HelpText::DisplayHelpText("You cannot ship this vehicle while wanted by the cops!");
+							worldtravel::HelpText::DisplayHelpText(Settings::GetLang("Lng39", "You cannot ship this vehicle while wanted by the cops!"));
 						}
 					}
 				}
